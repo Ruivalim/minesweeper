@@ -15,11 +15,11 @@ Everyone knows what minesweeper is, my objective here is first develop a functio
 - [X] Generate GRID
 - [X] Fill tiles with bombs
 - [X] Fill tiles with hints
-- [ ] Stylize tiles
-- [ ] Clicked tiles to open
-- [ ] Open white spaces
-- [ ] Mark tile with flag
-- [ ] Winning/Defeating behaviour
+- [X] Stylize tiles
+- [X] Clicked tiles to open
+- [X] Open white spaces
+- [X] Mark tile with flag
+- [X] Winning/Defeating behaviour
 
 ### Classic IA with Algorithm
 
