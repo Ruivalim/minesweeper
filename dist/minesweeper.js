@@ -8,7 +8,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var Field = /*#__PURE__*/function () {
   function Field(element) {
-    var mines = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
+    var mines = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 15;
     var width = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 700;
     var height = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 700;
     var resolution = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 70;
@@ -242,51 +242,43 @@ var Field = /*#__PURE__*/function () {
             this.openEmptyNeighbors(col + 1, row);
           }
         }
-      }
+      } // if( row < this.rows - 1 && col < this.cols - 1 ){
+      //     //TOP LEFT
+      //     if( this.minesweeper[col + 1][row + 1].value !== this.bombValue && this.minesweeper[col + 1][row + 1].state !== "open" ){
+      //         this.displayTile(this.minesweeper[col + 1][row + 1], col + 1, row + 1);
+      //         if( this.minesweeper[col + 1][row + 1].value == " " ){
+      //             this.openEmptyNeighbors(col + 1, row + 1);
+      //         }
+      //     }
+      // }
+      // if( col > 0  && row < this.rows - 1  ){
+      //     // TOP RIGHT
+      //     if( this.minesweeper[col - 1][row + 1].value !== this.bombValue && this.minesweeper[col - 1][row + 1].state !== "open" ){
+      //         this.displayTile(this.minesweeper[col - 1][row + 1], col - 1, row + 1);
+      //         if( this.minesweeper[col - 1][row + 1].value == " " ){
+      //             this.openEmptyNeighbors(col - 1, row + 1);
+      //         }
+      //     }
+      // }
+      // if( row > 0 && col > 0  ){
+      //     //DOWN RIGHT
+      //     if( this.minesweeper[col - 1][row - 1].value !== this.bombValue && this.minesweeper[col - 1][row - 1].state !== "open" ){
+      //         this.displayTile(this.minesweeper[col - 1][row - 1], col - 1, row - 1);
+      //         if( this.minesweeper[col - 1][row - 1].value == " " ){
+      //             this.openEmptyNeighbors(col - 1, row - 1);
+      //         }
+      //     }
+      // }
+      // if( row > 0 && col < this.cols - 1 ){
+      //     //DOWN LEFT
+      //     if( this.minesweeper[col + 1][row - 1].value !== this.bombValue && this.minesweeper[col + 1][row - 1].state !== "open" ){
+      //         this.displayTile(this.minesweeper[col + 1][row - 1], col + 1, row - 1);
+      //         if( this.minesweeper[col + 1][row - 1].value == " " ){
+      //             this.openEmptyNeighbors(col + 1, row - 1);
+      //         }
+      //     }
+      // }
 
-      if (row < this.rows - 1 && col < this.cols - 1) {
-        //TOP LEFT
-        if (this.minesweeper[col + 1][row + 1].value !== this.bombValue && this.minesweeper[col + 1][row + 1].state !== "open") {
-          this.displayTile(this.minesweeper[col + 1][row + 1], col + 1, row + 1);
-
-          if (this.minesweeper[col + 1][row + 1].value == " ") {
-            this.openEmptyNeighbors(col + 1, row + 1);
-          }
-        }
-      }
-
-      if (col > 0 && row < this.rows - 1) {
-        // TOP RIGHT
-        if (this.minesweeper[col - 1][row + 1].value !== this.bombValue && this.minesweeper[col - 1][row + 1].state !== "open") {
-          this.displayTile(this.minesweeper[col - 1][row + 1], col - 1, row + 1);
-
-          if (this.minesweeper[col - 1][row + 1].value == " ") {
-            this.openEmptyNeighbors(col - 1, row + 1);
-          }
-        }
-      }
-
-      if (row > 0 && col > 0) {
-        //DOWN RIGHT
-        if (this.minesweeper[col - 1][row - 1].value !== this.bombValue && this.minesweeper[col - 1][row - 1].state !== "open") {
-          this.displayTile(this.minesweeper[col - 1][row - 1], col - 1, row - 1);
-
-          if (this.minesweeper[col - 1][row - 1].value == " ") {
-            this.openEmptyNeighbors(col - 1, row - 1);
-          }
-        }
-      }
-
-      if (row > 0 && col < this.cols - 1) {
-        //DOWN LEFT
-        if (this.minesweeper[col + 1][row - 1].value !== this.bombValue && this.minesweeper[col + 1][row - 1].state !== "open") {
-          this.displayTile(this.minesweeper[col + 1][row - 1], col + 1, row - 1);
-
-          if (this.minesweeper[col + 1][row - 1].value == " ") {
-            this.openEmptyNeighbors(col + 1, row - 1);
-          }
-        }
-      }
     }
   }, {
     key: "openAllTiles",

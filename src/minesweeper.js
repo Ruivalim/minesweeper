@@ -1,5 +1,5 @@
 class Field{
-    constructor(element, mines = 10, width = 700, height = 700, resolution = 70){
+    constructor(element, mines = 15, width = 700, height = 700, resolution = 70){
         this.element = element;
         this.width = width;
         this.height = height;
@@ -198,42 +198,42 @@ class Field{
                 }
             }
         }
-        if( row < this.rows - 1 && col < this.cols - 1 ){
-            //TOP LEFT
-            if( this.minesweeper[col + 1][row + 1].value !== this.bombValue && this.minesweeper[col + 1][row + 1].state !== "open" ){
-                this.displayTile(this.minesweeper[col + 1][row + 1], col + 1, row + 1);
-                if( this.minesweeper[col + 1][row + 1].value == " " ){
-                    this.openEmptyNeighbors(col + 1, row + 1);
-                }
-            }
-        }
-        if( col > 0  && row < this.rows - 1  ){
-            // TOP RIGHT
-            if( this.minesweeper[col - 1][row + 1].value !== this.bombValue && this.minesweeper[col - 1][row + 1].state !== "open" ){
-                this.displayTile(this.minesweeper[col - 1][row + 1], col - 1, row + 1);
-                if( this.minesweeper[col - 1][row + 1].value == " " ){
-                    this.openEmptyNeighbors(col - 1, row + 1);
-                }
-            }
-        }
-        if( row > 0 && col > 0  ){
-            //DOWN RIGHT
-            if( this.minesweeper[col - 1][row - 1].value !== this.bombValue && this.minesweeper[col - 1][row - 1].state !== "open" ){
-                this.displayTile(this.minesweeper[col - 1][row - 1], col - 1, row - 1);
-                if( this.minesweeper[col - 1][row - 1].value == " " ){
-                    this.openEmptyNeighbors(col - 1, row - 1);
-                }
-            }
-        }
-        if( row > 0 && col < this.cols - 1 ){
-            //DOWN LEFT
-            if( this.minesweeper[col + 1][row - 1].value !== this.bombValue && this.minesweeper[col + 1][row - 1].state !== "open" ){
-                this.displayTile(this.minesweeper[col + 1][row - 1], col + 1, row - 1);
-                if( this.minesweeper[col + 1][row - 1].value == " " ){
-                    this.openEmptyNeighbors(col + 1, row - 1);
-                }
-            }
-        }
+        // if( row < this.rows - 1 && col < this.cols - 1 ){
+        //     //TOP LEFT
+        //     if( this.minesweeper[col + 1][row + 1].value !== this.bombValue && this.minesweeper[col + 1][row + 1].state !== "open" ){
+        //         this.displayTile(this.minesweeper[col + 1][row + 1], col + 1, row + 1);
+        //         if( this.minesweeper[col + 1][row + 1].value == " " ){
+        //             this.openEmptyNeighbors(col + 1, row + 1);
+        //         }
+        //     }
+        // }
+        // if( col > 0  && row < this.rows - 1  ){
+        //     // TOP RIGHT
+        //     if( this.minesweeper[col - 1][row + 1].value !== this.bombValue && this.minesweeper[col - 1][row + 1].state !== "open" ){
+        //         this.displayTile(this.minesweeper[col - 1][row + 1], col - 1, row + 1);
+        //         if( this.minesweeper[col - 1][row + 1].value == " " ){
+        //             this.openEmptyNeighbors(col - 1, row + 1);
+        //         }
+        //     }
+        // }
+        // if( row > 0 && col > 0  ){
+        //     //DOWN RIGHT
+        //     if( this.minesweeper[col - 1][row - 1].value !== this.bombValue && this.minesweeper[col - 1][row - 1].state !== "open" ){
+        //         this.displayTile(this.minesweeper[col - 1][row - 1], col - 1, row - 1);
+        //         if( this.minesweeper[col - 1][row - 1].value == " " ){
+        //             this.openEmptyNeighbors(col - 1, row - 1);
+        //         }
+        //     }
+        // }
+        // if( row > 0 && col < this.cols - 1 ){
+        //     //DOWN LEFT
+        //     if( this.minesweeper[col + 1][row - 1].value !== this.bombValue && this.minesweeper[col + 1][row - 1].state !== "open" ){
+        //         this.displayTile(this.minesweeper[col + 1][row - 1], col + 1, row - 1);
+        //         if( this.minesweeper[col + 1][row - 1].value == " " ){
+        //             this.openEmptyNeighbors(col + 1, row - 1);
+        //         }
+        //     }
+        // }
     }
 
     openAllTiles(){
